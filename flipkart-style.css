@@ -1,0 +1,496 @@
+/* General Styles */
+body {
+	margin: 5px;
+	background-color: #f1f2f4;
+	font-family: Arial, sans-serif; /* Added a font-family for consistent typography */
+  }
+  
+  /* Navbar */
+  .abcd {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: white;
+  }
+  
+  .left {
+	flex: 1;
+	display: flex;
+	align-items: center;
+  }
+  
+  .left img {
+	max-width: 100%;
+	height: auto;
+	padding-left: 10px;
+  }
+  
+  .right {
+	flex: 4;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+  }
+  
+  .right ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+  }
+  
+  .right ul li {
+	color: black;
+	padding: 0 15px; /* Increased padding for spacing */
+	display: flex;
+	align-items: center;
+  }
+  
+  .right ul li input {
+	width: 750px; /* Larger size on PC view */
+	height: 35px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 4px; /* Rounded corners for input field */
+  }
+  
+  .right ul li button {
+	height: 35px;
+	margin-right: 10px;
+	padding: 0 15px;
+	background-color: #2874f0; /* Flipkart blue */
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .right ul li button:hover {
+	background-color: #0b5ed7; /* Darker shade on hover */
+  }
+  
+  .right ul li .fa {
+	margin-right: 5px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+	.abcd {
+	  flex-wrap: wrap;
+	}
+  
+	.left {
+	  flex: 1 1 100%;
+	  justify-content: center;
+	  padding-bottom: 10px;
+	}
+  
+	.right {
+	  flex: 1 1 100%;
+	  justify-content: space-around; /* Space out items evenly */
+	}
+  
+	.right ul {
+	  flex-direction: row;
+	  flex-wrap: wrap;
+	  justify-content: space-between;
+	  width: 100%;
+	}
+  
+	.right ul li {
+	  padding: 0 5px;
+	  text-align: center;
+	}
+  
+	.right ul li input {
+	  width: auto; /* Adjust to fit container */
+	  margin-right: 5px;
+	}
+  
+	.right ul li button {
+	  margin-right: 5px;
+	}
+  }
+  
+ /* Categories Section */
+/* Wrapper for the scrollable section */
+.qwer-wrapper {
+	overflow: hidden; /* Hide the overflow */
+  }
+  
+  /* Make the category section horizontally scrollable */
+  .qwer {
+	display: flex;
+	overflow-x: auto; /* Allow horizontal scrolling */
+	scroll-snap-type: x mandatory; /* Snap to each item */
+	-webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Style each item */
+  .qwer div {
+	flex: 0 0 auto; /* Prevent items from shrinking or growing */
+	scroll-snap-align: start; /* Align items at the start of the scroll container */
+	width: 10%; /* Adjust width as needed */
+	box-sizing: border-box;
+	padding: 6px; /* Space around items */
+	transition: transform 0.3s; /* Smooth scaling on hover */
+	cursor: pointer; /* Indicate clickable area */
+	text-align: center; /* Center text */
+	list-style: none; /* Remove bullet points if using list items */
+	position: relative; /* For any potential absolute positioning adjustments */
+  }
+  
+  /* Scale up on hover */
+  .qwer div:hover {
+	transform: scale(1.05);
+  }
+  
+  /* Style images */
+  .qwer img {
+	height: 50px;
+	object-fit: cover; /* Maintain aspect ratio and cover the given height */
+	display: block; /* Ensure images are block-level to remove space below */
+  }
+  
+  /* Hide scrollbar on mobile */
+  .qwer::-webkit-scrollbar {
+	display: none;
+  }
+  
+  /* Display text below images on larger screens */
+  @media (min-width: 769px) {
+	.qwer {
+	  overflow-x: hidden; /* Disable horizontal scrolling on larger screens */
+	  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+	  gap: 25px; /* Add space between items */
+	}
+  
+	.qwer div {
+	  width: auto; /* Allow items to take their natural width */
+	  margin: 10px; /* Add margin around items for spacing */
+	  text-align: center; /* Center text below images */
+	}
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+	.qwer {
+	  flex-direction: row;
+	  width: 100%;
+	}
+  
+	.qwer div {
+	  width: 25%; /* Adjust the width for mobile view */
+	}
+  }
+  
+  @media (max-width: 576px) {
+	.qwer div {
+	  width: 33%; /* Further adjustment for smaller screens */
+	}
+  }
+  
+  
+
+  
+  
+  /* Promotions Section */
+  .wasd {
+	height: auto;
+	background-color: white;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	overflow: hidden; /* Ensures no overflow */
+  }
+  
+  .wasd img {
+	width: 100%; /* Make the image take the full width of the container */
+	height: auto; /* Maintain aspect ratio */
+	display: block; /* Remove bottom space */
+	margin-right: 0px; /* Keep right margin as needed */
+	max-height: 350px; /* Reduce the height of the image */
+	object-fit: cover; /* Ensure the image covers the container without stretching */
+  }
+  
+  
+  /* Best of Electronics Section */
+  .tyui {
+	margin: 10px;
+	height: auto;
+	background-color: white;
+	padding-bottom: 20px; /* Added bottom padding */
+	text-align: center; /* Aligns items to the center horizontally */
+  }
+  
+  .tyui h2 {
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 24px; /* Adjusted font size */
+	color: #333; /* Darker color */
+  }
+  
+  .boxA, .boxB, .boxC, .boxD, .boxE, .boxF {
+	height: 200px;
+	width: 18.4%;
+	display: inline-block;
+	margin: 5px 0; /* Added margin for spacing */
+	transition: transform 0.3s; /* Added hover effect */
+  }
+  
+  .boxA:hover, .boxB:hover, .boxC:hover, .boxD:hover, .boxE:hover, .boxF:hover {
+	transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+	.boxA, .boxB, .boxC, .boxD, .boxE, .boxF {
+	  width: 48%; /* Two items per row on mobile */
+	  margin: 1%; /* Adjust margin to ensure proper spacing */
+	}
+  }
+  
+  /* Media query for very small devices */
+  @media (max-width: 480px) {
+	.boxA, .boxB, .boxC, .boxD, .boxE, .boxF {
+	  width: 98%; /* Full width on very small devices */
+	  margin: 1%; /* Adjust margin to ensure proper spacing */
+	}
+  }
+  
+  /* Best of Fashions Section */
+  .ppmn {
+	margin: 10px;
+	height: auto;
+	background-color: white;
+	padding-bottom: 20px; /* Added bottom padding */
+	text-align: center; /* Center align for items */
+  }
+  
+  .ppmn h2 {
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 24px; /* Adjusted font size */
+	color: #333; /* Darker color */
+  }
+  
+  .box10, .box11, .box12, .box13, .box14, .box15 {
+	height: 250px;
+	width: 18.4%; /* Six items per row for desktop */
+	display: inline-block;
+	margin: 5px 0; /* Added margin for spacing */
+	transition: transform 0.3s; /* Added hover effect */
+  }
+  
+  .box10:hover, .box11:hover, .box12:hover, .box13:hover, .box14:hover, .box15:hover {
+	transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  /* Media query for tablet devices */
+  @media (max-width: 768px) {
+	.box10, .box11, .box12, .box13, .box14, .box15 {
+	  width: 48%; /* Two items per row for tablet */
+	  margin: 1%; /* Adjust margin for spacing */
+	}
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 480px) {
+	.box10, .box11, .box12, .box13, .box14, .box15 {
+	  width: 98%; /* One item per row for mobile */
+	  margin: 1%; /* Adjust margin for spacing */
+	}
+  }
+  
+  
+  /* Footer Section */
+/* Footer Section */
+.mnop {
+	background-color: #333;
+	height: auto;
+	margin-top: 20px;
+	padding: 40px 20px;
+	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* General container for each footer column */
+/* Footer Section */
+.mnop {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-between;
+    padding: 20px 10px; /* Adjust padding */
+}
+
+.mnop .section {
+    flex: 1 1 14%; /* Decrease flex basis */
+    margin: 0 10px; /* Reduce margin between sections */
+    min-width: 0; /* Ensure the sections can shrink */
+}
+
+.mnop h4 {
+    font-size: 14px; /* Reduce font size */
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.mnop ul, .mnop p {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px; /* Reduce font size for text */
+    color: #bbb;
+}
+
+.mnop li {
+    margin-bottom: 5px; /* Reduce margin between list items */
+}
+
+.mnop a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mnop a:hover {
+    color: #fff;
+}
+/* Vertical divider */
+.vertical-divider {
+	width: 1px;
+	background-color: #bbb;
+	margin: 0 20px;
+	height: auto; /* Adjusts based on the content */
+}
+
+
+
+/* Bottom Bar */
+.tws {
+    height: 50px;
+    background-color: #222;
+    margin-top: 0;
+    color: #bbb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Adjust padding */
+    font-size: 12px; /* Reduce font size */
+}
+
+.wire ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wire ul li {
+    margin-right: 15px; /* Reduce margin */
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.wire ul li i {
+    margin-right: 5px;
+    color: #ff0;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .mnop .section {
+        flex: 1 1 30%; /* Increase flex basis for smaller screens */
+        margin: 10px 0; /* Add more margin for spacing */
+    }
+
+    .tws {
+        padding: 10px 20px;
+    }
+
+    .wire ul {
+        justify-content: center;
+    }
+
+    .wire ul li {
+        margin-right: 10px; /* Reduce margin */
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .mnop {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    }
+
+    .mnop .section {
+        flex: 1 1 100%; /* Full width for smaller screens */
+        margin: 10px 0;
+    }
+
+    .tws {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .wire ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .wire ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Bottom banner */
+.rrr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.rrr img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rrr img:hover {
+    transform: scale(1.05);
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .rrr img {
+        max-width: 140px;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .rrr img {
+        max-width: 100px;
+    }
+}
